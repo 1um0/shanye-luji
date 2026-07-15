@@ -244,3 +244,9 @@ python3 scripts/ardot_manifest.py --json
 - 累计爬升按最高点减最低点计算：`max_elevation - min_elevation`。
 - 生成前必须完成专家约束生成和校验。
 - 交付物只记录专家包 ID、包内相对路径、trace ID、短 hash 和证据摘录，不写入本机绝对路径。
+
+## 作者信息
+
+- 作者：lumo
+- 所属：同济大学设计创意学院
+- 联系方式：1953430@tongji.edu.cn
