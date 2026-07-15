@@ -49,6 +49,81 @@ py scripts/check_environment.py
 
 如果需要读取 HEIC，必须包含 `Pillow` 和 `pillow-heif`。生成冰箱贴需要 `numpy`、`trimesh`、`shapely`、`matplotlib` 和 `mapbox-earcut`。
 
+## 在 Codex 中安装
+
+### 方式一：克隆到本地后使用
+
+```bash
+git clone https://github.com/1um0/shanye-luji.git
+cd shanye-luji
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+将 `shanye-luji` 目录放入 Codex 可读取的 skills 目录，或在 Codex 中打开该目录并让它读取 `SKILL.md`。内置专家包已经包含在 `assets/expert/` 中，不需要额外下载。
+
+### 方式二：直接下载仓库压缩包
+
+在 GitHub 仓库页面选择 `Code` > `Download ZIP`，解压后进入 `shanye-luji` 目录，按照上面的 Python 依赖安装命令执行即可。
+
+安装完成后，可以在 Codex 中提出类似请求：
+
+```text
+使用 shanye-luji，根据 route.gpx 和 photos/ 生成徒步纪念文创。
+路线名称：某某山
+地点名称：某某景区
+```
+
+Codex 会读取 `SKILL.md`，并调用 `scripts/generate_all.py` 完成生成。也可以直接在终端执行“快速开始”中的命令。
+
+## 在 Claude Code 中安装
+
+### 安装目录
+
+如果当前 Claude Code 环境支持项目级或用户级 skills 目录，可以将仓库克隆到对应目录：
+
+```bash
+# 项目级安装：只对当前项目生效
+mkdir -p .claude/skills
+git clone https://github.com/1um0/shanye-luji.git .claude/skills/shanye-luji
+
+# 或用户级安装：对当前用户的多个项目生效
+mkdir -p ~/.claude/skills
+git clone https://github.com/1um0/shanye-luji.git ~/.claude/skills/shanye-luji
+```
+
+然后安装 Python 依赖：
+
+```bash
+cd .claude/skills/shanye-luji
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 scripts/check_environment.py
+```
+
+在 Claude Code 中可以明确指定使用该 skill：
+
+```text
+请使用 shanye-luji skill，根据 route.gpx 和 photos/ 生成徒步纪念文创。
+```
+
+### 兼容性说明
+
+Claude Code 的调用方式、skills 目录约定和本地工具权限可能因版本或配置不同而变化。本 skill 当前主要在 Codex 环境中设计和验证，Claude Code 版本尚未完成完整调试，以上安装方式属于兼容性尝试，实际调用效果不一定理想。尤其是本地专家包的自动读取、浏览器截图、3D 模型预览和 Ardot/Cocraft 作品板交付，可能需要手动执行脚本或调整路径。
+
+如果 Claude Code 没有自动识别该 skill，可以直接进入 skill 目录，手动执行“快速开始”中的 Python 命令；如果找不到内置专家包，可以显式传入：
+
+```bash
+python3 scripts/generate_all.py \
+  --gpx "/path/to/route.gpx" \
+  --images "/path/to/photos" \
+  --expert-pack-root "$(pwd)/assets/expert" \
+  --route-name "路线名称" \
+  --place-name "地点名称"
+```
+
 ## 输入要求
 
 至少准备：
