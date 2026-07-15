@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>［路线名称］ · 明信片</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC","Noto Sans SC","Source Han Sans SC","Hiragino Sans GB",SimHei,sans-serif;
+  background:#10120f;padding:40px;display:flex;flex-direction:column;gap:40px;align-items:center
+}
+:root{--pine:#6d8b5e;--mineral:#5a7a6a;--earth-gold:#c4a87a;--warm-sand:#e8dfd3;--dark:#1a1a1a;--cream:#f5f0e8;--accent:#e07b3c}
+
+/* ===== FRONT: 山野通行证 ===== */
+.front{width:1200px;height:800px;position:relative;overflow:hidden;background:#10120f;color:var(--cream)}
+.front::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(232,223,211,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(232,223,211,0.045) 1px,transparent 1px);background-size:48px 48px;z-index:0}
+.front .bg-photo{position:absolute;right:48px;top:70px;width:650px;height:610px;background:url('photos/hero.jpg') center/cover no-repeat;clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);border:1px solid rgba(196,168,122,.55);z-index:4;filter:saturate(.9) contrast(1.08)}
+.front .vignette{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,18,15,1) 0%,rgba(16,18,15,.92) 42%,rgba(16,18,15,.1) 100%);pointer-events:none;z-index:5}
+
+/* Header bar */
+.front .top-strip{position:absolute;top:0;left:0;right:0;height:8px;background:var(--earth-gold);z-index:30}
+.front .header{position:absolute;top:28px;left:52px;right:52px;display:flex;justify-content:space-between;align-items:flex-start;z-index:30}
+.front .org-name{font-size:18px;font-weight:900;color:var(--cream);letter-spacing:1px;text-shadow:none;display:flex;align-items:center;gap:10px}
+.front .org-name .icon{width:32px;height:32px;background:var(--earth-gold);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:14px;transform:none;color:#10120f}
+.front .event-date{text-align:right;color:var(--earth-gold)}
+.front .event-date .date-main{font-size:28px;font-weight:900;letter-spacing:3px;line-height:1}
+.front .event-date .date-sub{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:4px;margin-top:2px}
+
+/* BIG CHARACTER TITLE - 大字报 */
+.front .title-block{position:absolute;top:112px;left:58px;width:430px;z-index:30}
+.front .title-tag{display:inline-block;font-size:15px;font-weight:900;color:#10120f;letter-spacing:1px;background:var(--earth-gold);padding:7px 14px;margin-bottom:18px;border-radius:0;transform:none}
+.front .title-main{font-size:96px;font-weight:900;color:var(--earth-gold);letter-spacing:0;text-shadow:none;line-height:.98}
+.front .title-en{font-size:15px;font-weight:800;color:rgba(245,240,232,.68);letter-spacing:2px;margin-top:18px;margin-left:0;line-height:1.5}
+
+/* Stats - positioned at bottom-left */
+.front .stats-row{position:absolute;bottom:104px;left:58px;width:430px;display:grid;grid-template-columns:repeat(2,1fr);gap:0;z-index:30;border:1px solid rgba(196,168,122,.55)}
+.front .stat-pill{background:rgba(245,240,232,.06);backdrop-filter:none;border-right:1px solid rgba(196,168,122,.35);border-bottom:1px solid rgba(196,168,122,.35);padding:15px 16px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.front .stat-pill:nth-child(2n){border-right:0}
+.front .stat-pill:nth-child(n+3){border-bottom:0}
+.front .stat-pill .val{font-size:28px;font-weight:900;color:var(--cream);line-height:1}
+.front .stat-pill .lbl{font-size:10px;color:rgba(245,240,232,.5);letter-spacing:1px;text-transform:none;font-weight:800}
+
+/* Arrow graffiti elements */
+.front .arrow-graf{position:absolute;z-index:25}
+.front .arrow-graf svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5))}
+
+/* Trail canvas - transparent overlay, adaptive line contrast */
+.front .trail-canvas{position:absolute;bottom:58px;right:72px;width:310px;height:230px;z-index:32;pointer-events:none;background:transparent;border:0;padding:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.32))}
+
+/* Bottom bar - no gradient overlay */
+.front .bottom-bar{position:absolute;bottom:0;left:0;right:0;height:70px;z-index:30;display:flex;align-items:flex-end;padding:0 58px 22px;justify-content:space-between;background:transparent}
+.front .bottom-bar .tagline{font-size:16px;font-weight:800;color:var(--earth-gold);letter-spacing:4px}
+.front .bottom-bar .camping-icons{display:flex;gap:16px;align-items:center}
+.front .bottom-bar .camping-icons svg{opacity:0.6}
+.front .bottom-bar .tagline-en{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:2px}
+
+/* Tape collage effect */
+.front .tape{position:absolute;width:60px;height:18px;background:rgba(255,255,255,0.15);z-index:35;transform:rotate(-5deg)}
+
+/* ===== BACK ===== */
+.back{width:1200px;height:800px;background:var(--cream);display:flex;position:relative;overflow:hidden;color:#181a14}
+.back::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(16,18,15,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(16,18,15,.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+
+.back .left{width:470px;padding:34px 30px 34px 38px;display:flex;flex-direction:column;border-right:2px solid #181a14;position:relative;height:100%;box-sizing:border-box;overflow:hidden}
+.back .back-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.back .back-logo{width:36px;height:36px;background:#181a14;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--earth-gold);flex-shrink:0}
+.back .back-title{font-size:22px;font-weight:900;color:#181a14;letter-spacing:0}
+.back .back-subtitle{font-size:10px;color:#5a7a6a;letter-spacing:2px;margin-top:2px;font-weight:800}
+
+.back .section-label{font-size:12px;color:#181a14;letter-spacing:1px;text-transform:none;margin-bottom:10px;font-weight:900;display:flex;align-items:center;gap:6px}
+.back .section-label::before{content:'';width:18px;height:3px;background:var(--earth-gold)}
+
+.back .elevation-chart{width:100%;height:160px;position:relative;overflow:hidden;margin-bottom:18px;flex-shrink:0}
+.back .elevation-chart canvas{width:100%;height:100%}
+
+.back .summary-section{flex-shrink:0;margin-bottom:16px}
+.back .summary-text{font-size:15px;color:#181a14;line-height:1.85}
+.back .summary-text strong{color:var(--mineral);font-weight:700}
+
+/* Bottom-left compass/nature decoration */
+/* Graffiti zone - fills remaining left space on back */
+.back .graffiti-zone{flex:1;min-height:0;margin-top:14px;z-index:5}
+.graffiti-box{width:100%;height:100%;border:2px solid #181a14;border-radius:0;display:flex;align-items:flex-start;justify-content:flex-start;background:rgba(196,168,122,0.08);position:relative}
+.graffiti-prompt{font-size:12px;color:#5a7a6a;opacity:.8;letter-spacing:0;font-style:normal;font-weight:800;position:absolute;top:12px;left:14px}
+
+/* Right: writing area */
+.back .right{flex:1;padding:34px 40px 34px 32px;display:flex;flex-direction:column}
+
+.back .stamp-box{width:104px;height:126px;border:2px solid #181a14;border-radius:0;align-self:flex-end;margin-bottom:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#181a14;font-size:14px;letter-spacing:0;font-weight:900;background:rgba(196,168,122,0.12)}
+
+.back .to-section{margin-bottom:8px}
+.back .to-line{border-bottom:2px solid #181a14;height:42px;display:flex;align-items:flex-end;padding-bottom:6px}
+.back .to-label{font-size:14px;color:#181a14;letter-spacing:1px;font-weight:900}
+
+.back .message-area{flex:1;display:flex;flex-direction:column;margin-top:4px}
+.back .message-label{font-size:12px;color:#181a14;letter-spacing:1px;margin-bottom:10px;font-weight:900}
+.back .message-lines{display:flex;flex-direction:column;gap:15px;flex:1}
+.back .message-line{border-bottom:1px solid rgba(24,26,20,.42);height:20px}
+
+.back .back-footer{margin-top:auto;padding-top:14px;border-top:2px solid #181a14;display:flex;justify-content:space-between;align-items:center}
+.back .back-footer-text{font-size:10px;color:#5a7a6a;letter-spacing:2px;font-weight:800}
+.back .back-footer .org-tag{font-size:10px;color:#181a14;font-weight:900;letter-spacing:1px}
+</style>
+</head>
+<body>
+
+<!-- ====== FRONT: 大字报潮流户外海报 ====== -->
+<div class="front">
+  <div class="bg-photo"></div>
+  <div class="vignette"></div>
+  <div class="top-strip"></div>
+
+  <!-- Tape collage marks -->
+  <div class="tape" style="top:16px;left:250px;transform:rotate(-7deg)"></div>
+  <div class="tape" style="top:16px;right:180px;transform:rotate(3deg)"></div>
+
+  <div class="header">
+    <div class="org-name">
+      <div class="icon">⛰️</div>
+      ［团队名称］
+    </div>
+    <div class="event-date">
+      <div class="date-main">［日期］</div>
+      <div class="date-sub">［星期］</div>
+    </div>
+  </div>
+
+  <div class="title-block">
+    <div class="title-tag">［地点］</div>
+    <div class="title-main">［路线名称］</div>
+    <div class="title-en">TRAIL ARCHIVE</div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-pill"><span class="val">0.00</span><span class="lbl">公里 KM</span></div>
+    <div class="stat-pill"><span class="val">0</span><span class="lbl">爬升 M ↑</span></div>
+    <div class="stat-pill"><span class="val">0</span><span class="lbl">最高 M ▲</span></div>
+    <div class="stat-pill"><span class="val">0分钟</span><span class="lbl">耗时 TIME</span></div>
+  </div>
+
+  <!-- Arrow graffiti: dynamic trail direction hints -->
+  <div class="arrow-graf" style="top:365px;left:340px">
+    <svg width="80" height="24" viewBox="0 0 80 24"><path d="M0 12h65M55 4l12 8-12 8" stroke="#c4a87a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="arrow-graf" style="top:480px;left:420px">
+    <svg width="60" height="20" viewBox="0 0 60 20"><path d="M0 10h48M38 3l10 7-10 7" stroke="#c4a87a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/></svg>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="tagline-en">TRAIL ARCHIVE</div>
+    <div class="camping-icons">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2L2 20h20L12 2z"/><path d="M12 20V10"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+    </div>
+  </div>
+
+  <canvas id="frontCanvas" class="trail-canvas" width="960" height="720"></canvas>
+</div>
+
+<!-- ====== BACK ====== -->
+<div class="back">
+  <div class="left">
+    <div class="back-header">
+      <div class="back-logo">⛰️</div>
+      <div>
+        <div class="back-title">［路线名称］</div>
+        <div class="back-subtitle">TRAIL ARCHIVE</div>
+      </div>
+    </div>
+
+    <div class="section-label">海拔剖面 ELEVATION</div>
+    <div class="elevation-chart">
+      <canvas id="backElevation"></canvas>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-label">路线记录 NOTES</div>
+      <div class="summary-text">
+        全程<strong>0.00公里</strong>，爬升<strong>0米</strong>，最高<strong>0米</strong>，耗时<strong>0分钟</strong>。
+      </div>
+    </div>
+
+    <!-- Bottom-left: graffiti zone -->
+    <div class="graffiti-zone">
+      <div class="graffiti-box">
+        <span class="graffiti-prompt">在这里画下你的记忆吧</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="stamp-box">
+      <div>邮票</div>
+      <div style="font-size:7px;margin-top:4px;opacity:0.5">STAMP</div>
+    </div>
+
+    <div class="to-section">
+      <div class="to-line"><span class="to-label">TO:</span></div>
+    </div>
+
+    <div class="message-area">
+      <div class="message-label">MESSAGE</div>
+      <div class="message-lines">
+        <div class="message-line"></div><div class="message-line"></div>
+        <div class="message-line"></div><div class="message-line"></div>
+        <div class="message-line"></div><div class="message-line"></div>
+        <div class="message-line"></div><div class="message-line"></div>
+        <div class="message-line"></div><div class="message-line"></div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <span class="back-footer-text">SHANYE LUJI</span>
+      <span class="org-tag">［团队名称］</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== DATA =====
+const TRAIL_MAP=[[0,0],[0,1]];
+const PROFILE=[[0,0],[1,1]];
+
+const PINE='#6d8b5e';const MINERAL='#5a7a6a';const EARTH_GOLD='#c4a87a';
+const ACCENT='#e07b3c';
+
+// ===== FRONT: GPX-based 2D Trail Map (flat style) =====
+(function(){
+  const c=document.getElementById('frontCanvas');
+  const ctx=c.getContext('2d');
+  const W=480,H=360,dpr=2;
+  c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
+
+  // Trail area with padding
+  const padL=20,padR=20,padT=20,padB=20;
+  const pw=W-padL-padR;
+  const ph=H-padT-padB;
+
+  // Compute bounds from TRAIL_MAP
+  let minLat=90,maxLat=-90,minLon=180,maxLon=-180;
+  TRAIL_MAP.forEach(p=>{
+    if(p[0]<minLat)minLat=p[0];
+    if(p[0]>maxLat)maxLat=p[0];
+    if(p[1]<minLon)minLon=p[1];
+    if(p[1]>maxLon)maxLon=p[1];
+  });
+  const latR=maxLat-minLat;
+  const lonR=maxLon-minLon;
+
+  const mapX=lon=>padL+((lon-minLon)/lonR)*pw;
+  const mapY=lat=>padT+ph-((lat-minLat)/latR)*ph;
+
+  function sampleBrightness(){
+    const photo=document.querySelector('.front .bg-photo');
+    if(!photo)return 90;
+    const url=getComputedStyle(photo).backgroundImage.replace(/^url\(["']?/,'').replace(/["']?\)$/,'');
+    const img=new Image();
+    img.src=url;
+    return new Promise(resolve=>{
+      img.onload=()=>{
+        try{
+          const sample=document.createElement('canvas');
+          sample.width=42;sample.height=42;
+          const sctx=sample.getContext('2d',{willReadFrequently:true});
+          sctx.drawImage(img,img.naturalWidth*.56,img.naturalHeight*.56,img.naturalWidth*.34,img.naturalHeight*.34,0,0,42,42);
+          const data=sctx.getImageData(0,0,42,42).data;
+          let total=0;
+          for(let i=0;i<data.length;i+=4){total+=0.2126*data[i]+0.7152*data[i+1]+0.0722*data[i+2];}
+          resolve(total/(data.length/4));
+        }catch(e){resolve(90);}
+      };
+      img.onerror=()=>resolve(90);
+    });
+  }
+
+  function drawPath(strokeStyle,lineWidth){
+    ctx.save();
+    ctx.strokeStyle=strokeStyle;
+    ctx.lineWidth=lineWidth;ctx.lineCap='round';ctx.lineJoin='round';
+    ctx.beginPath();
+    TRAIL_MAP.forEach((p,i)=>{
+      const x=mapX(p[1]),y=mapY(p[0]);
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.stroke();ctx.restore();
+  }
+
+  sampleBrightness().then(avg=>{
+  const onLight=avg>138;
+  const halo=onLight?'rgba(255,250,240,0.78)':'rgba(10,14,10,0.74)';
+  const line=onLight?'rgba(22,38,25,0.94)':'rgba(255,250,240,0.94)';
+  const label=onLight?'rgba(22,38,25,0.92)':'rgba(255,250,240,0.94)';
+
+  drawPath(halo,8);
+  drawPath(line,3.6);
+
+  // Three markers only: start, peak, end
+  const MARKERS=[
+    {frac:0.0, label:'起点', color:'#6d8b5e'},
+    {frac:0.58, label:'PEAK', color:'#e07b3c'},
+    {frac:1.0, label:'终点', color:'#5a7a6a'}
+  ];
+
+  MARKERS.forEach(mk=>{
+    const idx=Math.min(TRAIL_MAP.length-1,Math.floor(mk.frac*(TRAIL_MAP.length-1)));
+    const p=TRAIL_MAP[idx];
+    const x=mapX(p[1]),y=mapY(p[0]);
+
+    ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);
+    ctx.fillStyle=halo;ctx.fill();
+
+    ctx.beginPath();ctx.arc(x,y,4.6,0,Math.PI*2);
+    ctx.fillStyle=mk.color;ctx.fill();
+    ctx.strokeStyle=line;ctx.lineWidth=1.5;ctx.stroke();
+
+    ctx.fillStyle=label;ctx.font='bold 11px "Microsoft YaHei","PingFang SC",sans-serif';
+    ctx.textAlign='center';
+    ctx.shadowColor=onLight?'rgba(255,250,240,0.78)':'rgba(0,0,0,0.72)';
+    ctx.shadowBlur=3;
+    ctx.fillText(mk.label,x,y-16);
+    ctx.shadowBlur=0;
+    ctx.textAlign='left';
+  });
+  });
+})();
+
+// ===== BACK: Elevation Profile (minimal) =====
+(function(){
+  const c=document.getElementById('backElevation');
+  const ctx=c.getContext('2d');
+  const container=document.querySelector('.elevation-chart');
+  const W=container.clientWidth,H=container.clientHeight;
+  if(W===0||H===0){setTimeout(arguments.callee,100);return;}
+  const dpr=2;
+  c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
+
+  const maxY=1200;
+  const pad={t:10,b:10,l:10,r:10};
+  const cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+
+  // Fill under curve (subtle)
+  ctx.beginPath();
+  ctx.moveTo(pad.l,H-pad.b);
+  PROFILE.forEach(pt=>{
+    ctx.lineTo(pad.l+(pt[0]/17415)*cw, pad.t+ch-(pt[1]/maxY)*ch);
+  });
+  ctx.lineTo(W-pad.r,H-pad.b);ctx.closePath();
+  ctx.fillStyle='rgba(90,122,106,0.15)';ctx.fill();
+
+  // Line only
+  ctx.beginPath();
+  PROFILE.forEach((pt,i)=>{
+    const x=pad.l+(pt[0]/17415)*cw;
+    const y=pad.t+ch-(pt[1]/maxY)*ch;
+    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  });
+  ctx.strokeStyle='#5a7a6a';ctx.lineWidth=2;ctx.stroke();
+
+  // Peak marker only
+  const peakValue=Math.max(...PROFILE.map(pt=>pt[1]));
+  const peakPt=PROFILE.find(pt=>pt[1]===peakValue);
+  if(peakPt){
+    const px=pad.l+(peakPt[0]/17415)*cw;
+    const py=pad.t+ch-(peakPt[1]/maxY)*ch;
+    ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);
+    ctx.fillStyle='#e07b3c';ctx.fill();
+    ctx.fillStyle='#e07b3c';ctx.font='bold 10px "Microsoft YaHei","PingFang SC",sans-serif';
+    ctx.fillText(`▲ ${peakValue}m`,px+10,py-6);
+  }
+})();
+</script>
+</body>
+</html>

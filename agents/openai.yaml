@@ -1,0 +1,7 @@
+interface:
+  display_name: "山野路迹"
+  short_description: "GPX+照片生成户外纪念文创"
+  brand_color: "#6D8B5E"
+  default_prompt: "使用 $shanye-luji 把这条 GPX 和照片生成 3D 小报、冰箱贴、明信片、公众号长图和小红书九宫格。"
+policy:
+  allow_implicit_invocation: true

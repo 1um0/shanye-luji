@@ -1,0 +1,532 @@
+{
+  "version": "1.1",
+  "generated_by": "local TT expert packs before script generation",
+  "expert_pack": {
+    "status": "required_before_generation",
+    "root_name": "［专家包根目录名，不写绝对路径］",
+    "roles": {
+      "ui": {"display_name": "UI 设计师", "package_id": "［本地专家包 ID］", "files": []},
+      "xiaohongshu": {"display_name": "小红书运营专家", "package_id": "［本地专家包 ID］", "files": []},
+      "ardot": {"display_name": "Ardot 设计专家", "package_id": "［本地专家包 ID］", "files": []},
+      "web": {"display_name": "现代 Web 开发专家", "package_id": "［本地专家包 ID］", "files": []}
+    }
+  },
+  "expert_trace": {
+    "roles": {
+      "ui": {"package_id": "［本地专家包 ID］", "evidence": []},
+      "xiaohongshu": {"package_id": "［本地专家包 ID］", "evidence": []},
+      "ardot": {"package_id": "［本地专家包 ID］", "evidence": []},
+      "web": {"package_id": "［本地专家包 ID］", "evidence": []}
+    },
+    "decision_summary": []
+  },
+  "source": {
+    "route_name": "［路线名称］",
+    "place_name": "［徒步地点］",
+    "team_name": "［团队名称］",
+    "mood": ["［整体情绪］"],
+    "slogan": "",
+    "data_policy": {
+      "elevation_gain": "max_elevation_minus_min_elevation",
+      "use_only_gpx_exif_srtm_facts": true
+    }
+  },
+  "global": {
+    "visual_family": "paper-cut terrain archive",
+    "keywords": ["真实路线", "实拍照片", "可收藏纪念物"],
+    "palette_strategy": {
+      "brand_anchor": ["route_line", "team_signature"],
+      "photo_adaptive_color": true,
+      "avoid_monotone": true,
+      "default_brand_tokens": {
+        "pine": "#6d8b5e",
+        "mineral": "#5a7a6a",
+        "earth_gold": "#c4a87a",
+        "accent": "#e07b3c",
+        "warm_sand": "#e8dfd3",
+        "cream": "#f5f0e8",
+        "dark": "#1a1a1a"
+      }
+    },
+    "typography": {
+      "zh": "platform_preferred_cjk",
+      "zh_stack": "Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Source Han Sans SC, Hiragino Sans GB, SimHei, sans-serif",
+      "latin": "Inter",
+      "policy": "use scripts/platform_utils.py; do not hardcode a single OS font"
+    },
+    "style_tokens": {
+      "art_direction": "field_dossier",
+      "surface_strategy": "dark_field_board_with_cream_evidence_panels",
+      "shape_language": ["斜切裁片", "测绘边框", "路线证据条", "低圆角信息铭牌"],
+      "texture_language": ["实拍照片压暗", "等高线细纹", "档案编号", "户外通行证"]
+    },
+    "avoid": [
+      "脚本默认审美",
+      "生成后补专家说明",
+      "编造团队、人名、口号、感悟",
+      "数据为了视觉效果被改写"
+    ]
+  },
+  "products": {
+    "poster_3d": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "layout": "terrain_viewer_left_data_panel_right",
+        "terrain_crop": "expanded_context_with_soft_edge",
+        "panel_density": "compact_archive",
+        "palette_strategy": {
+          "brand_anchor": ["route_line_gold", "team_signature"],
+          "product_palette": {
+            "background": "［#HEX］",
+            "panel": "［#HEX］",
+            "panel_ink": "［#HEX］",
+            "terrain_low": "［#HEX］",
+            "terrain_high": "［#HEX］",
+            "terrain_edge": "［#HEX］",
+            "terrain_side": "［#HEX］",
+            "route_line_gold": "［#HEX］",
+            "accent": "［#HEX］"
+          },
+          "rationale": "［3D 小报为何使用这套配色，如何区别于其他产品］"
+        },
+        "visual_treatment": "terrain_control_console",
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "title": "［路线名称］",
+        "place_label": "［徒步地点］",
+        "team_label": "［团队名称］",
+        "story_quote": "［用户确认的徒步感受或中性占位］"
+      },
+      "script_hooks": {
+        "terrain_pad_ratio": 0.28,
+        "show_photo_strip": true,
+        "product_palette": {
+          "background": "［#HEX］",
+          "panel": "［#HEX］",
+          "panel_ink": "［#HEX］",
+          "terrain_low": "［#HEX］",
+          "terrain_high": "［#HEX］",
+          "terrain_edge": "［#HEX］",
+          "terrain_side": "［#HEX］",
+          "route_line_gold": "［#HEX］",
+          "accent": "［#HEX］"
+        },
+        "visual_treatment": "terrain_control_console"
+      },
+      "acceptance_checks": []
+    },
+    "magnet_3d": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "primary_shape": "hexagon",
+        "base_structure": "outer_rim_with_center_recess",
+        "relief_boundary": "inside_cutout",
+        "text_zone": "outer_rim",
+        "palette_strategy": {
+          "brand_anchor": ["engraved_route_text"],
+          "product_palette": {
+            "base_material": "［#HEX］",
+            "relief_low": "［#HEX］",
+            "relief_high": "［#HEX］",
+            "edge": "［#HEX］",
+            "preview_bg": "［#HEX］",
+            "trail": "［#HEX］",
+            "text": "［#HEX］",
+            "muted_text": "［#HEX］"
+          },
+          "rationale": "［冰箱贴预览为何使用这套材质色；STL/OBJ 本体仍以几何为准］"
+        },
+        "visual_treatment": "printed_terrain_badge",
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "edge_labels": [
+          "route_name",
+          "team_name",
+          "date",
+          "distance",
+          "elevation_gain",
+          "duration_max_elevation"
+        ]
+      },
+      "script_hooks": {
+        "coordinate_mode": "auto",
+        "base_cutout": true,
+        "text_outside_relief": true,
+        "text_mode": "engraved_recess",
+        "text_engrave_depth_mm": 0.85,
+        "text_bold_offset_mm": 0.12,
+        "text_route_height_mm": 3.6,
+        "text_field_height_mm": 3.05,
+        "trail_tube_radius_mm": 0.38,
+        "timestamp_exports": true,
+        "relief_edge_transition": "raised_base_shoulder",
+        "product_palette": {
+          "base_material": "［#HEX］",
+          "relief_low": "［#HEX］",
+          "relief_high": "［#HEX］",
+          "edge": "［#HEX］",
+          "preview_bg": "［#HEX］",
+          "trail": "［#HEX］",
+          "text": "［#HEX］",
+          "muted_text": "［#HEX］"
+        },
+        "visual_treatment": "printed_terrain_badge"
+      },
+      "acceptance_checks": []
+    },
+    "postcard": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "front": "trail_permit_pass_with_photo_cut",
+        "back": "field_log_postcard",
+        "palette_strategy": {
+          "brand_anchor": ["gold_route_data"],
+          "product_palette": {
+            "front_bg": "［#HEX］",
+            "front_text": "［#HEX］",
+            "stamp": "［#HEX］",
+            "back_bg": "［#HEX］",
+            "back_ink": "［#HEX］",
+            "route_line_light": "［#HEX］",
+            "route_line_dark": "［#HEX］"
+          },
+          "rationale": "［明信片正反面如何形成自己的通行证/记录单气质］"
+        },
+        "visual_treatment": "trail_permit_pass",
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "title_tag": "［徒步地点］",
+        "title_main": "［路线名称］",
+        "title_en": "TRAIL MEMORY",
+        "back_story": "［用户确认的徒步记录或中性占位］"
+      },
+      "script_hooks": {
+        "hero_photo": "highest_elevation_photo",
+        "trail_overlay_background": "transparent",
+        "trail_color_mode": "adaptive_photo_luminance",
+        "product_palette": {
+          "front_bg": "［#HEX］",
+          "front_text": "［#HEX］",
+          "stamp": "［#HEX］",
+          "back_bg": "［#HEX］",
+          "back_ink": "［#HEX］",
+          "route_line_light": "［#HEX］",
+          "route_line_dark": "［#HEX］"
+        },
+        "visual_treatment": "trail_permit_pass"
+      },
+      "acceptance_checks": []
+    },
+    "wechat_article": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "sequence": ["hero", "intro", "stats", "story", "photos", "profile", "review", "footer"],
+        "hero_photo": "highest_elevation_photo",
+        "palette_strategy": {
+          "brand_anchor": ["profile_line_gold"],
+          "product_palette": {
+            "page_bg": "［#HEX］",
+            "paper": "［#HEX］",
+            "ink": "［#HEX］",
+            "muted": "［#HEX］",
+            "rule": "［#HEX］",
+            "alert": "［#HEX］"
+          },
+          "rationale": "［公众号长图为何使用这套阅读型配色，如何避免和 3D 小报同色］"
+        },
+        "visual_treatment": "field_dossier_article",
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "intro_meta": "date_team_place",
+        "intro_quote_source": "trail_summary",
+        "review_source": "post_hike_review",
+        "hashtags": []
+      },
+      "script_hooks": {
+        "visual_treatment": "field_dossier_article",
+        "product_palette": {
+          "page_bg": "［#HEX］",
+          "paper": "［#HEX］",
+          "ink": "［#HEX］",
+          "muted": "［#HEX］",
+          "rule": "［#HEX］",
+          "alert": "［#HEX］"
+        },
+        "photo_sequence": []
+      },
+      "acceptance_checks": []
+    },
+    "social_grid": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "grid_count": 9,
+        "cover_hook": "［封面钩子］",
+        "sequence_logic": "route_timeline",
+        "palette_strategy": {
+          "brand_anchor": ["small_team_signature"],
+          "product_palette": {
+            "paper": "［#HEX］",
+            "ink": "［#HEX］",
+            "ticket": "［#HEX］",
+            "sticker_red": "［#HEX］",
+            "sticker_blue": "［#HEX］",
+            "sticker_yellow": "［#HEX］",
+            "route_light": "［#HEX］",
+            "route_dark": "［#HEX］"
+          },
+          "rationale": "［小红书九宫格为何使用这套照片手账/路线小票配色，如何避免同模板化］"
+        },
+        "visual_treatment": "xhs_native_grid_story",
+        "xhs_grid_plan": {
+          "strategy": "［小红书专家推导的九宫格整体策略］",
+          "source": [
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ],
+          "grid_rhythm": [],
+          "native_visual_cues": [
+            "手机相册感满幅照片裁切",
+            "轻透明文字叠层",
+            "无照片边框",
+            "团队名低透明水印"
+          ],
+          "avoid": [
+            "数据证明式文案",
+            "轨迹图说明性标题",
+            "相纸白边或厚边框",
+            "团队名抢主视觉",
+            "多张卡重复同一句 subline",
+            "每张都显示相同底部情绪词",
+            "同一张卡重复两组里程和海拔",
+            "把路线说明或节点记录等内部标签渲染出来"
+          ],
+          "cards": []
+        },
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "tone": "真实记录",
+        "hashtags": [],
+        "cards": []
+      },
+      "script_hooks": {
+        "visual_treatment": "xhs_native_grid_story",
+        "trail_overlay_background": "transparent",
+        "trail_color_mode": "adaptive_photo_luminance",
+        "hide_trail_label": true,
+        "remove_photo_borders": true,
+        "text_scrim_opacity": 0.52,
+        "data_scrim_opacity": 0.44,
+        "team_watermark_opacity": 0.18,
+        "metadata_integration": "small_inline_overlay_with_watermark_team",
+        "forbidden_visible_phrases": [
+          "现场照片和路线数据对得上",
+          "路线数据对得上",
+          "此刻在路线上的位置",
+          "证明真的上来了"
+        ],
+        "product_palette": {
+          "paper": "［#HEX］",
+          "ink": "［#HEX］",
+          "ticket": "［#HEX］",
+          "sticker_red": "［#HEX］",
+          "sticker_blue": "［#HEX］",
+          "sticker_yellow": "［#HEX］",
+          "route_light": "［#HEX］",
+          "route_dark": "［#HEX］"
+        },
+        "photo_picks": [],
+        "caption_map": {},
+        "card_plan": []
+      },
+      "acceptance_checks": []
+    },
+    "ardot_board": {
+      "expert_inputs": {
+        "ui": {
+          "summary": "［UI 设计师设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "xiaohongshu": {
+          "summary": "［小红书运营专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "ardot": {
+          "summary": "［Ardot 设计专家设计意图］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        },
+        "web": {
+          "summary": "［现代 Web 开发专家落地建议］",
+          "source": {"package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"], "files": ["［相对文件路径］"]}
+        }
+      },
+      "composition": {
+        "storyline": "input_to_expert_constraints_to_outputs",
+        "separate_product_frames": true,
+        "palette_strategy": {
+          "brand_anchor": ["board_title", "route_metrics"],
+          "product_palette": {
+            "board_bg": "［#HEX］",
+            "frame_bg": "［#HEX］",
+            "ink": "［#HEX］",
+            "accent": "［#HEX］"
+          },
+          "rationale": "［Ardot 作品板作为策展层如何突出各产品差异和专家链路］"
+        },
+        "visual_treatment": "expert_trace_product_board",
+        "visual_treatment_source": {
+          "rationale": "［为什么采用该视觉处理］",
+          "source": [
+            {"role": "ui", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "xiaohongshu", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "ardot", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]},
+            {"role": "web", "package_id": "［本地专家包 ID］", "trace_ids": ["［trace_id］"]}
+          ]
+        }
+      },
+      "visual_differentiators": [],
+      "copy_strategy": {
+        "board_title": "山野路迹文创产物总览",
+        "section_labels": ["路线事实", "专家约束", "文创产物", "迭代记录"]
+      },
+      "script_hooks": {
+        "use_manifest": true,
+        "visual_treatment": "expert_trace_product_board"
+      },
+      "acceptance_checks": []
+    }
+  }
+}

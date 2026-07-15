@@ -1,0 +1,562 @@
+{
+  "stats": {
+    "gps_matched": 18,
+    "time_matched": 0,
+    "manual": 2,
+    "total": 20
+  },
+  "photos": [
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0125.JPG",
+      "filename": "IMG_0125.JPG",
+      "format": "JPEG",
+      "size": [
+        1080,
+        1920
+      ],
+      "captured_at": null,
+      "has_gps": false,
+      "gps": null,
+      "photo_time_utc": null,
+      "match_method": "manual",
+      "match_note": "缺少 GPS 和时间信息，需要手动指定位置"
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0126.HEIC",
+      "filename": "IMG_0126.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 10:38:39",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.586942,
+        "longitude": 119.015464,
+        "altitude": 176.3
+      },
+      "photo_time_utc": "2026-06-19T10:38:39+08:00",
+      "match_method": "gps",
+      "route_index": 377,
+      "match_point": {
+        "lat": 29.586971,
+        "lon": 119.015472,
+        "ele": 176.0,
+        "time": "2026-06-19T02:36:59+00:00",
+        "cumulative_distance_m": 1042.7
+      },
+      "match_distance_m": 3.3,
+      "match_quality": "excellent",
+      "match_time_diff_s": 100.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0127.HEIC",
+      "filename": "IMG_0127.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 10:59:19",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.607767,
+        "longitude": 119.02955,
+        "altitude": 262.2
+      },
+      "photo_time_utc": "2026-06-19T10:59:19+08:00",
+      "match_method": "gps",
+      "route_index": 0,
+      "match_point": {
+        "lat": 29.591824,
+        "lon": 119.021989,
+        "ele": 174.0,
+        "time": "2026-06-19T02:22:33+00:00",
+        "cumulative_distance_m": 0
+      },
+      "match_distance_m": 1917.6,
+      "match_quality": "acceptable",
+      "match_time_diff_s": 2206.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0128.HEIC",
+      "filename": "IMG_0128.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 10:59:25",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.585542,
+        "longitude": 119.01245,
+        "altitude": 274.6
+      },
+      "photo_time_utc": "2026-06-19T10:59:25+08:00",
+      "match_method": "gps",
+      "route_index": 564,
+      "match_point": {
+        "lat": 29.585535,
+        "lon": 119.01245,
+        "ele": 276.0,
+        "time": "2026-06-19T02:57:54+00:00",
+        "cumulative_distance_m": 1619.0
+      },
+      "match_distance_m": 0.8,
+      "match_quality": "excellent",
+      "match_time_diff_s": 91.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0129.HEIC",
+      "filename": "IMG_0129.HEIC",
+      "format": "HEIF",
+      "size": [
+        3024,
+        4032
+      ],
+      "captured_at": "2026:06:19 11:21:42",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584347,
+        "longitude": 119.010147,
+        "altitude": 321.8
+      },
+      "photo_time_utc": "2026-06-19T11:21:42+08:00",
+      "match_method": "gps",
+      "route_index": 657,
+      "match_point": {
+        "lat": 29.584325,
+        "lon": 119.010125,
+        "ele": 296.0,
+        "time": "2026-06-19T03:06:11+00:00",
+        "cumulative_distance_m": 1915.3
+      },
+      "match_distance_m": 3.2,
+      "match_quality": "excellent",
+      "match_time_diff_s": 931.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0130.HEIC",
+      "filename": "IMG_0130.HEIC",
+      "format": "HEIF",
+      "size": [
+        3024,
+        4032
+      ],
+      "captured_at": "2026:06:19 11:21:47",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584339,
+        "longitude": 119.010125,
+        "altitude": 322.8
+      },
+      "photo_time_utc": "2026-06-19T11:21:47+08:00",
+      "match_method": "gps",
+      "route_index": 657,
+      "match_point": {
+        "lat": 29.584325,
+        "lon": 119.010125,
+        "ele": 296.0,
+        "time": "2026-06-19T03:06:11+00:00",
+        "cumulative_distance_m": 1915.3
+      },
+      "match_distance_m": 1.6,
+      "match_quality": "excellent",
+      "match_time_diff_s": 936.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0131.HEIC",
+      "filename": "IMG_0131.HEIC",
+      "format": "HEIF",
+      "size": [
+        5712,
+        4284
+      ],
+      "captured_at": "2026:06:19 11:22:16",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584278,
+        "longitude": 119.010147,
+        "altitude": 319.1
+      },
+      "photo_time_utc": "2026-06-19T11:22:16+08:00",
+      "match_method": "gps",
+      "route_index": 657,
+      "match_point": {
+        "lat": 29.584325,
+        "lon": 119.010125,
+        "ele": 296.0,
+        "time": "2026-06-19T03:06:11+00:00",
+        "cumulative_distance_m": 1915.3
+      },
+      "match_distance_m": 5.6,
+      "match_quality": "excellent",
+      "match_time_diff_s": 965.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0132.HEIC",
+      "filename": "IMG_0132.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 11:30:25",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584294,
+        "longitude": 119.0083,
+        "altitude": 212.9
+      },
+      "photo_time_utc": "2026-06-19T11:30:25+08:00",
+      "match_method": "gps",
+      "route_index": 705,
+      "match_point": {
+        "lat": 29.584288,
+        "lon": 119.008295,
+        "ele": 284.0,
+        "time": "2026-06-19T03:29:27+00:00",
+        "cumulative_distance_m": 2142.8
+      },
+      "match_distance_m": 0.8,
+      "match_quality": "excellent",
+      "match_time_diff_s": 58.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0135.HEIC",
+      "filename": "IMG_0135.HEIC",
+      "format": "HEIF",
+      "size": [
+        5712,
+        4284
+      ],
+      "captured_at": "2026:06:19 11:30:59",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584275,
+        "longitude": 119.008111,
+        "altitude": 298.7
+      },
+      "photo_time_utc": "2026-06-19T11:30:59+08:00",
+      "match_method": "gps",
+      "route_index": 710,
+      "match_point": {
+        "lat": 29.584284,
+        "lon": 119.008111,
+        "ele": 286.0,
+        "time": "2026-06-19T03:29:39+00:00",
+        "cumulative_distance_m": 2160.6
+      },
+      "match_distance_m": 1.0,
+      "match_quality": "excellent",
+      "match_time_diff_s": 80.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0136.HEIC",
+      "filename": "IMG_0136.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 11:39:04",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.58715,
+        "longitude": 119.006736,
+        "altitude": 146.7
+      },
+      "photo_time_utc": "2026-06-19T11:39:04+08:00",
+      "match_method": "gps",
+      "route_index": 827,
+      "match_point": {
+        "lat": 29.58458,
+        "lon": 119.005875,
+        "ele": 245.0,
+        "time": "2026-06-19T03:52:04+00:00",
+        "cumulative_distance_m": 2521.7
+      },
+      "match_distance_m": 297.7,
+      "match_quality": "acceptable",
+      "match_time_diff_s": 780.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0139.HEIC",
+      "filename": "IMG_0139.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 11:49:49",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584097,
+        "longitude": 119.006553,
+        "altitude": 276.2
+      },
+      "photo_time_utc": "2026-06-19T11:49:49+08:00",
+      "match_method": "gps",
+      "route_index": 795,
+      "match_point": {
+        "lat": 29.584112,
+        "lon": 119.006516,
+        "ele": 255.0,
+        "time": "2026-06-19T03:44:07+00:00",
+        "cumulative_distance_m": 2425.7
+      },
+      "match_distance_m": 3.9,
+      "match_quality": "excellent",
+      "match_time_diff_s": 342.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0140.HEIC",
+      "filename": "IMG_0140.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 11:51:18",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.584344,
+        "longitude": 119.006286,
+        "altitude": 247.0
+      },
+      "photo_time_utc": "2026-06-19T11:51:18+08:00",
+      "match_method": "gps",
+      "route_index": 809,
+      "match_point": {
+        "lat": 29.584359,
+        "lon": 119.006299,
+        "ele": 253.0,
+        "time": "2026-06-19T03:47:53+00:00",
+        "cumulative_distance_m": 2472.5
+      },
+      "match_distance_m": 2.1,
+      "match_quality": "excellent",
+      "match_time_diff_s": 205.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0142.JPG",
+      "filename": "IMG_0142.JPG",
+      "format": "JPEG",
+      "size": [
+        1080,
+        1920
+      ],
+      "captured_at": null,
+      "has_gps": false,
+      "gps": null,
+      "photo_time_utc": null,
+      "match_method": "manual",
+      "match_note": "缺少 GPS 和时间信息，需要手动指定位置"
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0143.HEIC",
+      "filename": "IMG_0143.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 12:05:09",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.588172,
+        "longitude": 119.000131,
+        "altitude": 117.5
+      },
+      "photo_time_utc": "2026-06-19T12:05:09+08:00",
+      "match_method": "gps",
+      "route_index": 874,
+      "match_point": {
+        "lat": 29.58459,
+        "lon": 119.004704,
+        "ele": 252.0,
+        "time": "2026-06-19T03:54:06+00:00",
+        "cumulative_distance_m": 2640.7
+      },
+      "match_distance_m": 595.1,
+      "match_quality": "acceptable",
+      "match_time_diff_s": 663.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0145.HEIC",
+      "filename": "IMG_0145.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 12:35:03",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.581572,
+        "longitude": 118.999039,
+        "altitude": 180.0
+      },
+      "photo_time_utc": "2026-06-19T12:35:03+08:00",
+      "match_method": "gps",
+      "route_index": 1088,
+      "match_point": {
+        "lat": 29.581648,
+        "lon": 118.999018,
+        "ele": 213.0,
+        "time": "2026-06-19T04:33:12+00:00",
+        "cumulative_distance_m": 3632.4
+      },
+      "match_distance_m": 8.7,
+      "match_quality": "excellent",
+      "match_time_diff_s": 111.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0147.HEIC",
+      "filename": "IMG_0147.HEIC",
+      "format": "HEIF",
+      "size": [
+        5712,
+        4284
+      ],
+      "captured_at": "2026:06:19 12:44:05",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.5771,
+        "longitude": 118.998092,
+        "altitude": 124.1
+      },
+      "photo_time_utc": "2026-06-19T12:44:05+08:00",
+      "match_method": "gps",
+      "route_index": 1246,
+      "match_point": {
+        "lat": 29.577172,
+        "lon": 118.998025,
+        "ele": 152.0,
+        "time": "2026-06-19T04:42:06+00:00",
+        "cumulative_distance_m": 4225.9
+      },
+      "match_distance_m": 10.3,
+      "match_quality": "excellent",
+      "match_time_diff_s": 119.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0149.HEIC",
+      "filename": "IMG_0149.HEIC",
+      "format": "HEIF",
+      "size": [
+        4032,
+        3024
+      ],
+      "captured_at": "2026:06:19 13:41:35",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.574303,
+        "longitude": 119.002542,
+        "altitude": 123.1
+      },
+      "photo_time_utc": "2026-06-19T13:41:35+08:00",
+      "match_method": "gps",
+      "route_index": 1720,
+      "match_point": {
+        "lat": 29.57435,
+        "lon": 119.002547,
+        "ele": 128.0,
+        "time": "2026-06-19T05:44:27+00:00",
+        "cumulative_distance_m": 6004.9
+      },
+      "match_distance_m": 5.2,
+      "match_quality": "excellent",
+      "match_time_diff_s": 172.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0151.HEIC",
+      "filename": "IMG_0151.HEIC",
+      "format": "HEIF",
+      "size": [
+        4032,
+        3024
+      ],
+      "captured_at": "2026:06:19 13:41:47",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.574289,
+        "longitude": 119.002572,
+        "altitude": 112.5
+      },
+      "photo_time_utc": "2026-06-19T13:41:47+08:00",
+      "match_method": "gps",
+      "route_index": 1720,
+      "match_point": {
+        "lat": 29.57435,
+        "lon": 119.002547,
+        "ele": 128.0,
+        "time": "2026-06-19T05:44:27+00:00",
+        "cumulative_distance_m": 6004.9
+      },
+      "match_distance_m": 7.2,
+      "match_quality": "excellent",
+      "match_time_diff_s": 160.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0152.HEIC",
+      "filename": "IMG_0152.HEIC",
+      "format": "HEIF",
+      "size": [
+        4284,
+        5712
+      ],
+      "captured_at": "2026:06:19 13:55:28",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.5758,
+        "longitude": 119.004775,
+        "altitude": 128.8
+      },
+      "photo_time_utc": "2026-06-19T13:55:28+08:00",
+      "match_method": "gps",
+      "route_index": 1800,
+      "match_point": {
+        "lat": 29.575701,
+        "lon": 119.004817,
+        "ele": 138.0,
+        "time": "2026-06-19T05:55:29+00:00",
+        "cumulative_distance_m": 6381.2
+      },
+      "match_distance_m": 11.7,
+      "match_quality": "excellent",
+      "match_time_diff_s": 1.0
+    },
+    {
+      "file": "/Users/chenmeng/Documents/skill-test/images/IMG_0153.HEIC",
+      "filename": "IMG_0153.HEIC",
+      "format": "HEIF",
+      "size": [
+        5712,
+        4284
+      ],
+      "captured_at": "2026:06:19 15:00:08",
+      "has_gps": true,
+      "gps": {
+        "latitude": 29.583017,
+        "longitude": 119.020211,
+        "altitude": 108.8
+      },
+      "photo_time_utc": "2026-06-19T15:00:08+08:00",
+      "match_method": "gps",
+      "route_index": 2221,
+      "match_point": {
+        "lat": 29.58313,
+        "lon": 119.020374,
+        "ele": 176.0,
+        "time": "2026-06-19T06:58:27+00:00",
+        "cumulative_distance_m": 8761.8
+      },
+      "match_distance_m": 20.2,
+      "match_quality": "good",
+      "match_time_diff_s": 101.0
+    }
+  ]
+}
